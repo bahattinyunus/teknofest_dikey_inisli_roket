@@ -1,0 +1,60 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a14;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="100%" r="70%" fx="50%" fy="100%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    <filter id="f1" x="0" y="0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bgGradient)" />
+  <rect width="1200" height="400" fill="url(#glow)" />
+
+  <!-- Grid Lines (HUD Style) -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="800" y1="0" x2="800" y2="400" />
+    <line x1="1000" y1="0" x2="1000" y2="400" />
+  </g>
+
+  <!-- Rocket Schematic (Simplified) -->
+  <g transform="translate(600, 150) scale(0.8)">
+    <!-- Rocket Body -->
+    <path d="M-20,100 L20,100 L30,50 L30,-50 C30,-80 0,-120 0,-120 C0,-120 -30,-80 -30,-50 L-30,50 Z" fill="#e1e4e8" stroke="#ffffff" stroke-width="2" />
+    <!-- TVC Flame -->
+    <path d="M-15,100 Q0,180 15,100 Z" fill="#ff6d00" filter="url(#f1)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="0.2s" repeatCount="indefinite" />
+    </path>
+    <!-- Landing Legs -->
+    <line x1="-30" y1="50" x2="-60" y2="110" stroke="#ffffff" stroke-width="3" />
+    <line x1="30" y1="50" x2="60" y2="110" stroke="#ffffff" stroke-width="3" />
+  </g>
+
+  <!-- Text elements -->
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="8">VERTICAL-ARCH</text>
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="20" fill="#00e5ff" text-anchor="middle" letter-spacing="4" opacity="0.8">SYSTEM ARCHITECTURE &amp; AUTONOMOUS LANDING</text>
+  
+  <!-- Logo/Badge Info -->
+  <rect x="50" y="50" width="180" height="40" rx="4" fill="#00e5ff" fill-opacity="0.1" stroke="#00e5ff" stroke-width="1" />
+  <text x="140" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#00e5ff" text-anchor="middle">TEKNOFEST 2025</text>
+  
+  <rect x="970" y="50" width="180" height="40" rx="4" fill="#ff6d00" fill-opacity="0.1" stroke="#ff6d00" stroke-width="1" />
+  <text x="1060" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff6d00" text-anchor="middle">MISSION: ACTIVE</text>
+
+  <!-- Animated HUD Circle -->
+  <circle cx="600" cy="180" r="160" fill="none" stroke="#00e5ff" stroke-width="1" stroke-dasharray="10, 20" stroke-opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 600 180" to="360 600 180" dur="20s" repeatCount="indefinite" />
+  </circle>
+</svg>
